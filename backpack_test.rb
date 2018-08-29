@@ -63,7 +63,20 @@ Day: monday, Weather: sunny
 - shirt
 - gym shoes
 - packed lunch"
-    assert_equal(expected, backpack.my_func)
+    assert_equal(expected, backpack.summary)
+  end
+
+  ##### TESTS ABOUT PRINTING THE LIST #####
+  def test_that_backpack_prints_correctly_weekend
+    backpack = build(:backpack, day_of_week: 'saturday', weather: 'rainy')
+    expected =
+"Melinda, here's your packing list!
+Day: saturday, Weather: rainy
+
+- pants
+- shirt
+- umbrella"
+    assert_equal(expected, backpack.summary)
   end
 
 end
